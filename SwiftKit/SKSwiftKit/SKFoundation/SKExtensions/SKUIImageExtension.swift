@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImage {
     
-    func sk_drawImageSize(radius: CGFloat, size: CGSize) -> UIImage {
+    public func sk_drawImageSize(radius: CGFloat, size: CGSize) -> UIImage {
         
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
         // 开启上下文

@@ -38,7 +38,7 @@ extension String {
 }
 extension String {
 
-    func heightText(font:UIFont,width:CGFloat) -> CGFloat {
+    public func heightText(font:UIFont,width:CGFloat) -> CGFloat {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -48,8 +48,8 @@ extension String {
         return label.frame.height
     }
     
-    func heightAttributesText(attributes:[NSAttributedStringKey:Any],width:CGFloat) -> CGFloat {
-        guard self.characters.count > 0 && width > 0 else {
+    public func heightAttributesText(attributes:[NSAttributedStringKey:Any],width:CGFloat) -> CGFloat {
+        guard self.count > 0 && width > 0 else {
             return 0
         }
         let size = CGSize(width:width, height:CGFloat.greatestFiniteMagnitude)

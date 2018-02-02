@@ -119,7 +119,6 @@
 		362869D22021CD8F00008C90 /* SKFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				36286A002021D9AE00008C90 /* SKExtensionUtils */,
 				362869FD2021D9A300008C90 /* SKSearch */,
 				362869D32021CD8F00008C90 /* SKExtensions */,
 			);
@@ -170,13 +169,6 @@
 				362869FE2021D9A300008C90 /* SKSearch.swift */,
 			);
 			path = SKSearch;
-			sourceTree = "<group>";
-		};
-		36286A002021D9AE00008C90 /* SKExtensionUtils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SKExtensionUtils;
 			sourceTree = "<group>";
 		};
 		36723E82201B07EC006E2C34 = {
@@ -295,6 +287,7 @@
 				TargetAttributes = {
 					362869C42021CD6E00008C90 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					36723E8A201B07EC006E2C34 = {
@@ -456,6 +449,7 @@
 		362869CF2021CD6E00008C90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -470,6 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.upd.SKSwiftKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -480,6 +475,7 @@
 		362869D02021CD6E00008C90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

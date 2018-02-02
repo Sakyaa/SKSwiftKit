@@ -29,10 +29,12 @@ class ViewController: UIViewController {
         view.addSubview(label)
         
         let file = FileManager.default
-        let cachesPath = FileManager.default.skCachesPath
-        let documentsPath = FileManager.default.skDocumentsPath
+        let cachesPath = file.skCachesPath
+        let documentsPath = file.skDocumentsPath
         SKLog(cachesPath! + documentsPath!)
+        SKLog(KScreenConstant.sk_kScreenHeight)
 
+        
         
         
     }

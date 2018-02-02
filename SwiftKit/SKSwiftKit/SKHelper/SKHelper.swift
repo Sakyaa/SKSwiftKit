@@ -11,7 +11,7 @@ import UIKit
 
 public class SKHelper {
     
-    class func sk_disbaleAutoAdjustScrollViewInsets(currentView:UIView) {
+    public class func sk_disbaleAutoAdjustScrollViewInsets(currentView:UIView) {
         if #available(iOS 11.0, *) {
             disbaleAutoAdjustScrollViewInsets(currentView: currentView)
         } else {
@@ -19,7 +19,7 @@ public class SKHelper {
         }
     }
     //MAAK:-- jsonsting <->dic
-   class func getDictionaryFromJSONString(jsonString:String) ->NSDictionary {
+   public class func getDictionaryFromJSONString(jsonString:String) ->NSDictionary {
         let jsonData:Data = jsonString.data(using: .utf8)!
         let dict = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
         if dict != nil {
@@ -27,7 +27,7 @@ public class SKHelper {
         }
         return NSDictionary()
     }
-    class func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
+    public class func getJSONStringFromDictionary(dictionary:NSDictionary) -> String {
         if (!JSONSerialization.isValidJSONObject(dictionary)) {
             print("无法解析出JSONString")
             return ""
@@ -37,7 +37,7 @@ public class SKHelper {
         return JSONString! as String
     }
     
-    class func componentsInstance(date:Date) -> DateComponents {
+    public class func componentsInstance(date:Date) -> DateComponents {
         struct Static {
             static let calendar = NSCalendar.init(calendarIdentifier: .gregorian)
         }
@@ -47,7 +47,7 @@ public class SKHelper {
         let theComponents = Static.calendar?.components(calendarUnit, from: date)
         return theComponents!
     }
-    class func sk_getCurrentDate() -> String {
+    public class func sk_getCurrentDate() -> String {
         let date:Date = Date()
         let weekDays = [NSNull.init(),"星期日","星期一","星期二","星期三","星期四","星期五","星期六"] as [Any]
         let calendar = Calendar.current
@@ -58,7 +58,7 @@ public class SKHelper {
     }
     
     
-    class func sk_resizeImage(originalImg:UIImage) -> UIImage{
+    public class func sk_resizeImage(originalImg:UIImage) -> UIImage{
 
         //prepare constants
         let width = originalImg.size.width
@@ -114,7 +114,7 @@ public class SKHelper {
 
     //    分割千分位
  
-    class func getSeparatedString(orgStr: String) -> String {
+    public class func getSeparatedString(orgStr: String) -> String {
         let length = orgStr.utf16.count
         if length < 4 {  return orgStr }
         var dstStr = String()

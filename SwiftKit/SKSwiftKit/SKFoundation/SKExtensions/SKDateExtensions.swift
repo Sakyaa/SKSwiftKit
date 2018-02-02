@@ -11,12 +11,12 @@
 import Foundation
 
 public extension Date {
+    
     public enum SKDateStyle {
         case yearMonthDay
         case yearMonthDayHourMinSecond
-        
     }
-
+    
     public func sk_dateStringFormatter(ofStyle style:SKDateStyle) ->String {
         struct DateStatic {
             static let dateFormatter = DateFormatter()
@@ -28,7 +28,6 @@ public extension Date {
         default:
             break
         }
-        
         return DateStatic.dateFormatter.string(from: self)
     }
 
