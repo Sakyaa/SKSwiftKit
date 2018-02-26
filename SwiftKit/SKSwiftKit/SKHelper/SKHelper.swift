@@ -47,17 +47,17 @@ public class SKHelper {
         let theComponents = Static.calendar?.components(calendarUnit, from: date)
         return theComponents!
     }
+      //MARK:-- 获取当前星期
     public class func sk_getCurrentDate() -> String {
         let date:Date = Date()
         let weekDays = [NSNull.init(),"星期日","星期一","星期二","星期三","星期四","星期五","星期六"] as [Any]
         let calendar = Calendar.current
         let dateComponents =  calendar.dateComponents([.month,.day,.weekday], from: date)
         let dateString = "\(dateComponents.month ?? 0)月\(dateComponents.day ?? 0)日  \(weekDays[(dateComponents.weekday)!])"
-
         return dateString
     }
     
-    
+      //MARK:-- 图片压缩
     public class func sk_resizeImage(originalImg:UIImage) -> UIImage{
 
         //prepare constants
@@ -113,31 +113,63 @@ public class SKHelper {
     }
 
     //    分割千分位
- 
     public class func getSeparatedString(orgStr: String) -> String {
-        let length = orgStr.utf16.count
-        if length < 4 {  return orgStr }
-        var dstStr = String()
-        var orgChars = orgStr.characters
-        let startIndex = orgChars.startIndex
-        var counter = 0
-        var i = length - 1
-        repeat  {
-            counter += 1
-            dstStr.insert(orgChars.popLast()!, at: startIndex)
-            if counter == 3 {
-                dstStr.insert(",", at: startIndex)
-                counter = 0;
-            }
-            i -= 1  // Swift 2.2已经废弃使用++、--了，请注意！
+     
+        if let num:Int = Int(orgStr) {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.positiveFormat = ",###;"
+            let changeNum = numberFormatter.string(from: NSNumber(value: num))
+            return changeNum!
         }
-            while i > 0
-        dstStr.insert(orgChars.popLast()!, at: startIndex)
-        return dstStr;
+        return orgStr
     }
     
-    
-    
+    //MARK:-- 定时器
+    /// GCD定时器倒计时⏳
+    ///   - timeInterval: 循环间隔时间
+    ///   - repeatCount: 重复次数
+    ///   - handler: 循环事件, 闭包参数： 1. timer， 2. 剩余执行次数
+    public class func DispatchTimer(timeInterval: Double, repeatCount:Int, handler:@escaping (DispatchSourceTimer?, Int)->()) {
+        if repeatCount <= 0 {
+            return
+        }
+        let timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
+        var count = repeatCount
+        timer.schedule(wallDeadline: .now(), repeating: timeInterval)
+        timer.setEventHandler(handler: {
+            count -= 1
+            DispatchQueue.main.async {
+                //倒计时完成
+                handler(timer, count)
+            }
+            if count == 0 {
+                timer.cancel()
+            }
+        })
+        timer.resume()
+    }
+    /// GCD定时器循环操作
+    ///   - timeInterval: 循环间隔时间
+    ///   - handler: 循环事件
+    public class func DispatchTimer(timeInterval: Double, handler:@escaping (DispatchSourceTimer?)->()) {
+        let timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
+        timer.schedule(deadline: .now(), repeating: timeInterval)
+        timer.setEventHandler {
+            DispatchQueue.main.async {
+                handler(timer)
+            }
+        }
+        timer.resume()
+    }
+    /// GCD延时操作
+    ///   - after: 延迟的时间
+    ///   - handler: 事件
+    public class func DispatchAfter(after: Double, handler:@escaping ()->())
+    {
+        DispatchQueue.main.asyncAfter(deadline: .now() + after) {
+            handler()
+        }
+    }
     
     //MARK:-- private
     private class func disbaleAutoAdjustScrollViewInsets (currentView:UIView) {

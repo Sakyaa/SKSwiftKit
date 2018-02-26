@@ -34,8 +34,12 @@ class ViewController: UIViewController {
         SKLog(cachesPath! + documentsPath!)
         SKLog(KScreenConstant.sk_kScreenHeight)
 
-        
-        
+        //千分位
+        let thons = SKHelper.getSeparatedString(orgStr: "asdas")
+        SKLog(thons)
+        SKHelper.DispatchTimer(timeInterval: 20, repeatCount: 1) { (timer, count)  in
+            SKLog("haha")
+        }
         
     }
 
