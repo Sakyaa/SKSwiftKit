@@ -21,11 +21,9 @@ open class SKSearch: NSObject {
             }
         }
     }
-    
     open func setSearchHistories(value: [String]) {
         pref.set(value, forKey: SKSearchDefaultsConfig.histories)
     }
-    
     open func deleteSearchHistories(index: Int) {
         guard var histories = pref.object(forKey: SKSearchDefaultsConfig.histories) as? [String] else { return }
         histories.remove(at: index)

@@ -74,7 +74,6 @@ class SKPickerToolBarView: UIView {
         cancelAction?()
         
     }
-    
     override public func layoutSubviews() {
         super.layoutSubviews()
         let margin = 15.0
@@ -86,8 +85,6 @@ class SKPickerToolBarView: UIView {
         doneBtn.frame = CGRect(x: Double(bounds.size.width) - btnWidth - margin, y: 0.0, width: btnWidth, height: btnWidth)
         let titleX = Double((cancleBtn.frame).maxX) + margin
         let titleW = Double(bounds.size.width) - titleX - btnWidth - margin
-        
-        
         titleLabel.frame = CGRect(x: titleX, y: 0.0, width: titleW, height: btnWidth)
     }
 }

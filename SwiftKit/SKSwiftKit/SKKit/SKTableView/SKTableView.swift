@@ -12,10 +12,8 @@ typealias SKTableViewBlock = ()->()
 
 class SKTableView: UITableView {
     
-    
     var headerBlock:SKTableViewBlock?
     var footerBlock:SKTableViewBlock?
-
     
     var showFooterView:Bool = false {
         didSet{

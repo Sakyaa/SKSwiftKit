@@ -17,16 +17,16 @@ enum SKAlertViewAction {
 }
 struct SKAlertViewLayout {
     
-    static let viewNormalWidth:CGFloat = sk_xFrom6(300)
-    static let viewProminentWidth:CGFloat = sk_xFrom6(300)
+    static let viewNormalWidth:CGFloat = 270
+    static let viewProminentWidth:CGFloat = 270
     static let viewTitleHeight:CGFloat =  60
     static let viewMargin:CGFloat =  15
-    static let contentMargin:CGFloat =  sk_xFrom6(30)
-    static let contentTopOrBottomMargin:CGFloat =  sk_xFrom6(40)
-    static let contentInternalMargin:CGFloat =  sk_xFrom6(15)
-    static let buttonHeight:CGFloat =  45
+    static let contentMargin:CGFloat =  30
+    static let contentTopOrBottomMargin:CGFloat =  40
+    static let contentInternalMargin:CGFloat =  15
+    static let buttonHeight:CGFloat =  44
     static let contentFont:UIFont = UIFont.systemFont(ofSize: 17)
-    static let contentImageSize:CGSize = CGSize.init(width: sk_xFrom6(55), height: sk_xFrom6(55))
+    static let contentImageSize:CGSize = CGSize.init(width: 55, height: 55)
     static let prominentLabelHeight:CGFloat = 30
 }
 class SKAlertView: UIView {
@@ -38,7 +38,7 @@ class SKAlertView: UIView {
         let backgoundView:UIView = UIView()
         backgoundView.backgroundColor = UIColor.white
         backgoundView.clipsToBounds = true
-        backgoundView.layer.cornerRadius = skCornerRadius
+        backgoundView.layer.cornerRadius = 4
         return backgoundView
     }()
     lazy var toolbarView:UIView = {
@@ -48,14 +48,14 @@ class SKAlertView: UIView {
     }()
     
     lazy var contentView:SKAlertMainView = {
-        let contentView:SKAlertMainView = SKAlertMainView.init(frame: CGRect.init(x: 0, y: 0, width: backgoundView.sk_width, height: backgoundView.height - toolbarView.sk_height),content:alertViewContent,title:alertViewTitle)
+        let contentView:SKAlertMainView = SKAlertMainView.init(frame: CGRect.init(x: 0, y: 0, width: backgoundView.sk_width, height: backgoundView.sk_height - toolbarView.sk_height),content:alertViewContent,title:alertViewTitle)
         if !proimageName.isEmpty {contentView.imageView.image = UIImage.init(named: proimageName)}
         return contentView
     }()
     lazy var contentLabel:UILabel = {
         let contentLabel:UILabel = UILabel()
         contentLabel.numberOfLines = 0
-        contentLabel.sk_width = backgoundView.width - SKAlertViewLayout.contentMargin * 2
+        contentLabel.sk_width = backgoundView.sk_width - SKAlertViewLayout.contentMargin * 2
         contentLabel.sk_left = SKAlertViewLayout.contentMargin
         contentLabel.sk_top = SKAlertViewLayout.contentTopOrBottomMargin
         contentLabel.textAlignment = .center

@@ -22,7 +22,6 @@
 		362869F32021CD8F00008C90 /* SKUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869DC2021CD8F00008C90 /* SKUIViewExtension.swift */; };
 		362869F42021CD8F00008C90 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869DD2021CD8F00008C90 /* UIDeviceExtension.swift */; };
 		362869F92021CD8F00008C90 /* SKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869E62021CD8F00008C90 /* SKHelper.swift */; };
-		362869FA2021CD8F00008C90 /* SKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869E82021CD8F00008C90 /* SKLogger.swift */; };
 		362869FB2021CD8F00008C90 /* SKScreenConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869E92021CD8F00008C90 /* SKScreenConstant.swift */; };
 		362869FC2021CD8F00008C90 /* SKSwifterSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869EA2021CD8F00008C90 /* SKSwifterSwift.swift */; };
 		362869FF2021D9A300008C90 /* SKSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362869FE2021D9A300008C90 /* SKSearch.swift */; };
@@ -31,6 +30,7 @@
 		36723E94201B07EC006E2C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36723E92201B07EC006E2C34 /* Main.storyboard */; };
 		36723E96201B07EC006E2C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36723E95201B07EC006E2C34 /* Assets.xcassets */; };
 		36723E99201B07EC006E2C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36723E97201B07EC006E2C34 /* LaunchScreen.storyboard */; };
+		367D492F2045320000F8CCD8 /* SKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D492D2045320000F8CCD8 /* SKLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,6 @@
 		362869DC2021CD8F00008C90 /* SKUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKUIViewExtension.swift; sourceTree = "<group>"; };
 		362869DD2021CD8F00008C90 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		362869E62021CD8F00008C90 /* SKHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHelper.swift; sourceTree = "<group>"; };
-		362869E82021CD8F00008C90 /* SKLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLogger.swift; sourceTree = "<group>"; };
 		362869E92021CD8F00008C90 /* SKScreenConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScreenConstant.swift; sourceTree = "<group>"; };
 		362869EA2021CD8F00008C90 /* SKSwifterSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSwifterSwift.swift; sourceTree = "<group>"; };
 		362869FE2021D9A300008C90 /* SKSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSearch.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		36723E95201B07EC006E2C34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36723E98201B07EC006E2C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36723E9A201B07EC006E2C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367D492D2045320000F8CCD8 /* SKLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLogger.swift; sourceTree = "<group>"; };
 		9C334533B30BC927596CAF6F /* Pods_SwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +110,7 @@
 		362869C62021CD6E00008C90 /* SKSwiftKit */ = {
 			isa = PBXGroup;
 			children = (
+				36A53B6720440911002E915A /* SKKit */,
 				362869D22021CD8F00008C90 /* SKFoundation */,
 				362869E52021CD8F00008C90 /* SKHelper */,
 			);
@@ -156,7 +157,6 @@
 		362869E72021CD8F00008C90 /* SKSwifterSwift */ = {
 			isa = PBXGroup;
 			children = (
-				362869E82021CD8F00008C90 /* SKLogger.swift */,
 				362869E92021CD8F00008C90 /* SKScreenConstant.swift */,
 				362869EA2021CD8F00008C90 /* SKSwifterSwift.swift */,
 			);
@@ -196,6 +196,7 @@
 			children = (
 				36723E8E201B07EC006E2C34 /* AppDelegate.swift */,
 				36723E90201B07EC006E2C34 /* ViewController.swift */,
+				367D492C2045320000F8CCD8 /* SKLogger */,
 				3627C901201EEB1D00228235 /* IteratorDesignPatterns.swift */,
 				36723E92201B07EC006E2C34 /* Main.storyboard */,
 				36723E95201B07EC006E2C34 /* Assets.xcassets */,
@@ -204,6 +205,23 @@
 			);
 			path = SwiftKit;
 			sourceTree = "<group>";
+		};
+		367D492C2045320000F8CCD8 /* SKLogger */ = {
+			isa = PBXGroup;
+			children = (
+				367D492D2045320000F8CCD8 /* SKLogger.swift */,
+			);
+			name = SKLogger;
+			path = SKSwiftKit/SKHelper/SKLogger;
+			sourceTree = "<group>";
+		};
+		36A53B6720440911002E915A /* SKKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SKKit;
+			path = SwiftKit/SKSwiftKit/SKKit;
+			sourceTree = SOURCE_ROOT;
 		};
 		B030E1BF50F523DA30F0C8C5 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -392,7 +410,6 @@
 				362869EB2021CD8F00008C90 /* SKCalayerExtension.swift in Sources */,
 				362869EE2021CD8F00008C90 /* SKNSAttributedStringExtensions.swift in Sources */,
 				362869F92021CD8F00008C90 /* SKHelper.swift in Sources */,
-				362869FA2021CD8F00008C90 /* SKLogger.swift in Sources */,
 				362869EC2021CD8F00008C90 /* SKDateExtensions.swift in Sources */,
 				362869FF2021D9A300008C90 /* SKSearch.swift in Sources */,
 				362869ED2021CD8F00008C90 /* SKFileManagerExtension.swift in Sources */,
@@ -413,6 +430,7 @@
 				3627C902201EEB1D00228235 /* IteratorDesignPatterns.swift in Sources */,
 				36723E91201B07EC006E2C34 /* ViewController.swift in Sources */,
 				36723E8F201B07EC006E2C34 /* AppDelegate.swift in Sources */,
+				367D492F2045320000F8CCD8 /* SKLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
