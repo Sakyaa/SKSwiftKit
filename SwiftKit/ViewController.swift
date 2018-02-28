@@ -40,7 +40,44 @@ class ViewController: UIViewController {
             SKInfoLog(1,1)
         }
         
+        view.addSubview(scrollPageView)
+
+        
+        
     }
+    lazy var childVcs: [UIViewController] = {
+        let recommendVc = UIViewController()
+        recommendVc.view.backgroundColor = UIColor.orange
+        let gameVc = UIViewController()
+        let entertainmentVc = UIViewController()
+        entertainmentVc.view.backgroundColor = UIColor.purple
+        let interestingVc = UIViewController()
+        let interestingVc1 = UIViewController()
+        let interestingVc2 = UIViewController()
+        interestingVc2.view.backgroundColor = UIColor.cyan
+        
+        let interestingVc3 = UIViewController()
+        let interestingVc4 = UIViewController()
+        interestingVc4.view.backgroundColor = UIColor.blue
+        
+        return [recommendVc, gameVc, entertainmentVc, interestingVc, interestingVc1, interestingVc2, interestingVc3, interestingVc4, entertainmentVc, interestingVc, interestingVc1, interestingVc2, interestingVc3, interestingVc4]
+    }()
+    lazy var scrollPageView: SKScrollPageView = {
+        let titles = ["推撒打算打算打算荐", "游戏", "娱乐", "趣玩","关注","吧吧","牛吧","直播", "娱乐", "趣玩","关注","吧吧","牛吧","直播"]
+        var style = SKSegmentStyle()
+        style.showLine = true
+        style.normalTitleColor = UIColor(red: 105.0/255.0, green: 106.0/255.0, blue: 107.0/255.0, alpha: 1)
+        style.selectedTitleColor = UIColor(red: 248.0/255.0, green: 122.0/255.0, blue: 8.0/255.0, alpha: 1)
+        style.scrollLineColor = UIColor(red: 248.0/255.0, green: 122.0/255.0, blue: 8.0/255.0, alpha: 1)
+        style.gradualChangeTitleColor = true
+        style.scrollTitle = true
+        style.showExtraButton = false
+        
+        
+        let scrollPageView = SKScrollPageView(frame: CGRect(x:0.0, y: 64.0, width: self.view.bounds.width, height: self.view.bounds.height - 64.0 - 44.0), segmentStyle: style, titles: titles, childVcs: self.childVcs, parentViewController: self)
+        scrollPageView.segmentView.backgroundColor = UIColor.lightText
+        return scrollPageView
+    }()
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

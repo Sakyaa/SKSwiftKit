@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Sakya. All rights reserved.
 //
 
-import Foundation
+import UIKit
 public let ScrollPageViewDidShowThePageNotification = "ScrollPageViewDidShowThePageNotification"
 public struct SKSegmentStyle {
     

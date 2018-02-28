@@ -31,6 +31,10 @@
 		36723E96201B07EC006E2C34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36723E95201B07EC006E2C34 /* Assets.xcassets */; };
 		36723E99201B07EC006E2C34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36723E97201B07EC006E2C34 /* LaunchScreen.storyboard */; };
 		367D493320453ED100F8CCD8 /* SKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367D493220453ED100F8CCD8 /* SKLogger.swift */; };
+		36B4CBA52046521C00AAD983 /* SKContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B4CBA12046521C00AAD983 /* SKContentView.swift */; };
+		36B4CBA62046521C00AAD983 /* SKScrollPageVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B4CBA22046521C00AAD983 /* SKScrollPageVIew.swift */; };
+		36B4CBA72046521C00AAD983 /* SKScrollSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B4CBA32046521C00AAD983 /* SKScrollSegmentView.swift */; };
+		36B4CBA82046521C00AAD983 /* SKSegmentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B4CBA42046521C00AAD983 /* SKSegmentStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		36723E98201B07EC006E2C34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36723E9A201B07EC006E2C34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		367D493220453ED100F8CCD8 /* SKLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLogger.swift; sourceTree = "<group>"; };
+		36B4CBA12046521C00AAD983 /* SKContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKContentView.swift; sourceTree = "<group>"; };
+		36B4CBA22046521C00AAD983 /* SKScrollPageVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollPageVIew.swift; sourceTree = "<group>"; };
+		36B4CBA32046521C00AAD983 /* SKScrollSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScrollSegmentView.swift; sourceTree = "<group>"; };
+		36B4CBA42046521C00AAD983 /* SKSegmentStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSegmentStyle.swift; sourceTree = "<group>"; };
 		9C334533B30BC927596CAF6F /* Pods_SwiftKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -217,10 +225,22 @@
 		36A53B6720440911002E915A /* SKKit */ = {
 			isa = PBXGroup;
 			children = (
+				36B4CBA02046521C00AAD983 /* SKScrollPageView */,
 			);
 			name = SKKit;
 			path = SwiftKit/SKSwiftKit/SKKit;
 			sourceTree = SOURCE_ROOT;
+		};
+		36B4CBA02046521C00AAD983 /* SKScrollPageView */ = {
+			isa = PBXGroup;
+			children = (
+				36B4CBA12046521C00AAD983 /* SKContentView.swift */,
+				36B4CBA22046521C00AAD983 /* SKScrollPageVIew.swift */,
+				36B4CBA32046521C00AAD983 /* SKScrollSegmentView.swift */,
+				36B4CBA42046521C00AAD983 /* SKSegmentStyle.swift */,
+			);
+			path = SKScrollPageView;
+			sourceTree = "<group>";
 		};
 		B030E1BF50F523DA30F0C8C5 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -426,9 +446,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B4CBA62046521C00AAD983 /* SKScrollPageVIew.swift in Sources */,
+				36B4CBA82046521C00AAD983 /* SKSegmentStyle.swift in Sources */,
 				3627C902201EEB1D00228235 /* IteratorDesignPatterns.swift in Sources */,
 				36723E91201B07EC006E2C34 /* ViewController.swift in Sources */,
+				36B4CBA72046521C00AAD983 /* SKScrollSegmentView.swift in Sources */,
 				36723E8F201B07EC006E2C34 /* AppDelegate.swift in Sources */,
+				36B4CBA52046521C00AAD983 /* SKContentView.swift in Sources */,
 				367D493320453ED100F8CCD8 /* SKLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
