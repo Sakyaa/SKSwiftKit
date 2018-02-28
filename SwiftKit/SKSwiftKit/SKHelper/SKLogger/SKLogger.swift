@@ -105,7 +105,6 @@ fileprivate extension SKLogger {
                 let cachePath = FileManager.default.urls(for: .cachesDirectory,
                                                          in: .userDomainMask)[0]
                 let logURL = cachePath.appendingPathComponent("log.txt")
-                print(logURL.absoluteString)
                 appendText(fileURL: logURL, string: log)
             }
         }

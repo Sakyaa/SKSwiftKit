@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         let documentsPath = file.skDocumentsPath
         SKInfoLog(cachesPath! + documentsPath!)
         SKInfoLog(KScreenConstant.sk_kScreenHeight)
-
         //千分位
         let thons = SKHelper.getSeparatedString(orgStr: "asdas")
         SKInfoLog(thons)
